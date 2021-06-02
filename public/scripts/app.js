@@ -16,11 +16,23 @@ var user = {
   printPlacesLived: function printPlacesLived() {
     var _this = this;
 
-    var cityMessages = this.cities.map(function (city) {
+    return this.cities.map(function (city) {
       return _this.name + " has lived in " + city;
     });
-
-    return cityMessages;
   }
 };
 console.log(user.printPlacesLived());
+
+var multiplier = {
+  numbers: [2, 3, 4],
+  multiplyBy: 3,
+  multiply: function multiply() {
+    var _this2 = this;
+
+    return this.numbers.map(function (num) {
+      return num * _this2.multiplyBy;
+    });
+  }
+};
+
+console.log(multiplier.multiply());
