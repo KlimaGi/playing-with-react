@@ -1,38 +1,37 @@
 "use strict";
 
-// arguments objects - no longer bound with arrow functions
+var visibility = false;
 
-var add = function add(a, b) {
-  // console.log(arguments); // arguments works only with standart functions, not arrows
-  return a + b;
-};
-console.log(add(55, 13, 1));
-
-// this keyword - no longer bound
-
-var user = {
-  name: "Giedre",
-  cities: ["Klaipeda", "Vilnius", "Sofia"],
-  printPlacesLived: function printPlacesLived() {
-    var _this = this;
-
-    return this.cities.map(function (city) {
-      return _this.name + " has lived in " + city;
-    });
-  }
-};
-console.log(user.printPlacesLived());
-
-var multiplier = {
-  numbers: [2, 3, 4],
-  multiplyBy: 3,
-  multiply: function multiply() {
-    var _this2 = this;
-
-    return this.numbers.map(function (num) {
-      return num * _this2.multiplyBy;
-    });
-  }
+var toggleShow = function toggleShow() {
+  visibility = !visibility;
+  renderToggle();
 };
 
-console.log(multiplier.multiply());
+var renderToggle = function renderToggle() {
+  var templateText = React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "h1",
+      null,
+      "Title"
+    ),
+    React.createElement(
+      "button",
+      { onClick: toggleShow },
+      visibility ? "Hide details" : "Show details"
+    ),
+    visibility && React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        null,
+        "Every step matter. With the time value. Step by step."
+      )
+    )
+  );
+  ReactDOM.render(templateText, document.getElementById("app"));
+};
+
+renderToggle();
