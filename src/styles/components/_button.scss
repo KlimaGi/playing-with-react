@@ -13,7 +13,12 @@
 .big-button:disabled {
   opacity: 0.5;
 }
-
+.big-button:hover {
+  background: darken($purple, 10%);
+}
+.button:hover {
+  background: darken($purple, 10%);
+}
 // Button
 .button {
   background: $purple;
@@ -29,4 +34,9 @@
   color: darken($purple, 10%);
   font-weight: bold;
   padding: 0;
+}
+
+.button--link:hover {
+  color: darken($purple, 20%);
+  background: none;
 }
