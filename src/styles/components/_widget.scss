@@ -1,0 +1,25 @@
+//Widget
+.widget {
+  background: lighten($off-grey, 20%);
+  margin-bottom: $xl-size;
+}
+
+.widget--message {
+  margin: 0;
+  padding: $l-size;
+  text-align: center;
+  color: $purple;
+  border-bottom: 1px solid lighten($off-grey, 15%);
+}
+
+//Widget Header
+.widget-header {
+  background: lighten($off-grey, 15%);
+  padding: $m-size;
+  display: flex;
+  justify-content: space-between;
+}
+
+.widget-header--title {
+  margin: 0;
+}
