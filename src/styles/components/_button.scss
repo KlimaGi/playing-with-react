@@ -7,7 +7,7 @@
   font-size: $l-size;
   letter-spacing: 1px;
   width: 100%;
-  margin-bottom: $xl-size;
+  margin-bottom: $m-size;
   padding: 2.4rem;
 }
 .big-button:disabled {
@@ -16,9 +16,13 @@
 .big-button:hover {
   background: darken($purple, 10%);
 }
-.button:hover {
-  background: darken($purple, 10%);
+
+@media (min-width: $desktop-breakpoint) {
+  .big-button {
+    margin-bottom: $xl-size;
+  }
 }
+
 // Button
 .button {
   background: $purple;
@@ -26,6 +30,10 @@
   border-bottom: 0.3rem solid darken($purple, 10%);
   color: $light-grey;
   padding: $s-size;
+}
+
+.button:hover {
+  background: darken($purple, 10%);
 }
 
 .button--link {

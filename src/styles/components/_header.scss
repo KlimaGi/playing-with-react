@@ -1,9 +1,16 @@
 .header {
   background: $off-grey;
   color: $off-dark;
-  margin-bottom: $xl-size;
+  margin-bottom: $m-size;
   padding: $m-size 0;
 }
+
+@media (min-width: $desktop-breakpoint) {
+  .header {
+    margin-bottom: $xl-size;
+  }
+}
+
 //BEM block element modifier
 .header__title {
   font-size: $l-size;
